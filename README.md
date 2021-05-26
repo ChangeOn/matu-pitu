@@ -1,2 +1,2 @@
 # matu-pitu
-matu-pitu | Grammer checker lite.
+matu-pitu | Grammar checker lite.
