@@ -37,6 +37,9 @@
     "web-vitals": "1.1.2"
   },
   "devDependencies": {
+    "@material-ui/core": "4.11.4",
+    "@material-ui/icons": "4.11.2",
+    "@material-ui/styles": "4.11.4",
     "hanspell": "0.8.4",
     "react-router-dom": "5.2.0"
   }

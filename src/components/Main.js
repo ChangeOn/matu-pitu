@@ -1,4 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import {Button, Container, CssBaseline, Typography} from '@material-ui/core';
+import SpacingGrid from './Form';
+import BottomNav from './BottomNav';
 
 const hanspell = require('hanspell');
 
@@ -11,29 +14,33 @@ function Main() {
         console.error("// hanspell => " + error);
     };
 
-    const checkGrammarD = () => {
+    const checkSpellD = () => {
         console.log('checkGrammarD', sentence)
         let results = hanspell.spellCheckByDAUM(sentence ? sentence : "", 10000, 'return', end, error);
         console.log('results Daum =>', results);
     };
 
-    const checkGrammarP = () => {
+    const checkSpellP = () => {
         let results = hanspell.spellCheckByPNU(sentence, 10000, 'return', end, error);
-        console.log('results PNU =>',results)
+        console.log('results PNU =>', results)
 
     };
 
     return (
         <>
-            <div>
-                <h1>Matu Pitu(machu picchu)</h1>
-                <h2>한국어 맞춤법 검사기 lite</h2>
-            </div>
-            <div>
-                <p>원문 : {sentence}</p>
-                <button onClick={() => setSentence(checkGrammarD)}>Daum 서비스로 검사</button>
-                <button onClick={() => setSentence(checkGrammarP)}>부산대학교 서비스로 검사</button>
-            </div>
+            <CssBaseline/>
+            <Container maxWidth='lg'>
+                {/*<Typography variant="h3" component="h4" gutterBottom>Matu Pitu(machu picchu)</Typography>*/}
+                {/*<Typography variant="h4" gutterBottom>한국어 맞춤법 검사기 lite</Typography>*/}
+                <div className="input-wrapper" style={{marginTop: '10%'}}>
+                    <form id="originalTxt">
+                        <SpacingGrid />
+                    </form>
+                    {/*<button onClick={() => setSentence(checkSpellD)}>Daum 서비스로 검사</button>*/}
+                    {/*<button onClick={() => setSentence(checkSpellP)}>부산대학교 서비스로 검사</button>*/}
+                    <BottomNav />
+                </div>
+            </Container>
         </>
     );
 }

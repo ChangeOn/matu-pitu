@@ -1,8 +1,4 @@
-# Matu-Pitu | Grammar checker lite.
-
-**This project was supported and inspired by Jade, Go and me**
-
-## step1. How to use hanspell library ?
+# Matu-Pitu | Spell checker lite.
 
 ### `About`
 
@@ -11,9 +7,14 @@
 1. 일분일초가 귀한 사람에게능 너무너무 느리다.
 2. 맞춤법 검사를 하는 도중에 오류가 나거나 검사 가능한 글자 수를 넘어도 오류가 난다.
 
-### `Todo`
+## step1. How to use hanspell library ?
 
-**2021.05.26**
-* 프로젝트 세팅, React가 너무 오랜만이라 가물가물하다.
-* hanspell 라이브러리를 가져다 설명대로 썼는데 왜 안 되지? 흐-음..
-* 오늘 라이브러리 써서 결과 나오는 거 까지 하려 했는데, 일단 이슈에 질문만 올려놨다.
+`2021.05.26`
+* 프로젝트 세팅, React
+* hanspell 라이브러리를 가져다 설명대로 썼는데 왜 안 돼
+* 라이브러리 써서 결과 나오는 거 까지 하려 했는데, 일단 이슈에 질문만 올려놨다.
+
+## step2. Design, Layout, UI Publishing
+`2021.05.27`
+* Material-UI
+* 디자인, 레이아웃 만들고 퍼블리싱
