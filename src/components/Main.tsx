@@ -10,7 +10,7 @@ function Main() {
     const end = () => {
         console.log("// check ends");
     };
-    const error = (error) => {
+    const error = (error: string) => {
         console.error("// hanspell => " + error);
     };
 
@@ -32,13 +32,13 @@ function Main() {
             <Container maxWidth='lg'>
                 {/*<Typography variant="h3" component="h4" gutterBottom>Matu Pitu(machu picchu)</Typography>*/}
                 {/*<Typography variant="h4" gutterBottom>한국어 맞춤법 검사기 lite</Typography>*/}
-                <div className="input-wrapper" style={{marginTop: '10%'}}>
+                <div className="input-wrapper">
                     <form id="originalTxt">
-                        <SpacingGrid />
+                        <SpacingGrid/>
                     </form>
                     {/*<button onClick={() => setSentence(checkSpellD)}>Daum 서비스로 검사</button>*/}
                     {/*<button onClick={() => setSentence(checkSpellP)}>부산대학교 서비스로 검사</button>*/}
-                    <BottomNav />
+                    <BottomNav/>
                 </div>
             </Container>
         </>

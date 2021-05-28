@@ -27,3 +27,6 @@ yarn-error.log*
 
 # Intellij
 matu-pitu.iml
+
+# React bug
+/src/react-app-env.d.ts
