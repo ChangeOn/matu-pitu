@@ -2,11 +2,19 @@ import React, {useState, useEffect} from 'react';
 import {Button, Container, CssBaseline, Typography} from '@material-ui/core';
 import SpacingGrid from './Form';
 import BottomNav from './BottomNav';
+import { makeStyles } from '@material-ui/core/styles';
 
 const hanspell = require('hanspell');
+const useStyles = makeStyles({
+    root: {
+        marginTop: '100px',
+    },
+});
 
 function Main() {
     const [sentence, setSentence] = useState('리랜드는 얼굴 골격이 굵은게,');
+    const classes = useStyles();
+
     const end = () => {
         console.log("// check ends");
     };
@@ -14,17 +22,11 @@ function Main() {
         console.error("// hanspell => " + error);
     };
 
-    const checkSpellD = () => {
-        console.log('checkGrammarD', sentence)
-        let results = hanspell.spellCheckByDAUM(sentence ? sentence : "", 10000, 'return', end, error);
-        console.log('results Daum =>', results);
-    };
-
-    const checkSpellP = () => {
-        let results = hanspell.spellCheckByPNU(sentence, 10000, 'return', end, error);
-        console.log('results PNU =>', results)
-
-    };
+    const checkSpell = () => {
+        let daumResults = hanspell.spellCheckByDAUM(sentence ? sentence : "", 10000, 'return', end, error);
+        let pnuResults = hanspell.spellCheckByPNU(sentence, 10000, 'return', end, error);
+        console.log("daum", daumResults, "pnu", pnuResults);
+    }
 
     return (
         <>
@@ -32,13 +34,11 @@ function Main() {
             <Container maxWidth='lg'>
                 {/*<Typography variant="h3" component="h4" gutterBottom>Matu Pitu(machu picchu)</Typography>*/}
                 {/*<Typography variant="h4" gutterBottom>한국어 맞춤법 검사기 lite</Typography>*/}
-                <div className="input-wrapper">
+                <div className={classes.root}>
                     <form id="originalTxt">
                         <SpacingGrid/>
                     </form>
-                    {/*<button onClick={() => setSentence(checkSpellD)}>Daum 서비스로 검사</button>*/}
-                    {/*<button onClick={() => setSentence(checkSpellP)}>부산대학교 서비스로 검사</button>*/}
-                    <BottomNav/>
+                    <BottomNav checkSpell={checkSpell} />
                 </div>
             </Container>
         </>

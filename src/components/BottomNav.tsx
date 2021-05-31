@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
@@ -12,10 +12,13 @@ const useStyles = makeStyles({
         margin: '15px 0 0 55px'
     },
 });
+interface checkProps {
+    checkSpell: () => void,
+}
 
-export default function SimpleBottomNavigation() {
-    const classes = useStyles();
+const SimpleBottomNavigation: React.FC<checkProps> = (props: checkProps) => {
     const [value, setValue] = React.useState(0);
+    const classes = useStyles();
 
     return (
         <BottomNavigation
@@ -26,8 +29,14 @@ export default function SimpleBottomNavigation() {
             showLabels
             className={classes.root}
         >
-            <BottomNavigationAction label="검사시작" icon={<FavoriteIcon />} />
+            <BottomNavigationAction
+                label="검사시작"
+                icon={<FavoriteIcon />}
+                onClick={props.checkSpell}
+            />
             <BottomNavigationAction label="초기화" icon={<RestoreIcon />} />
         </BottomNavigation>
     );
 }
+
+export default SimpleBottomNavigation;

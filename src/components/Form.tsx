@@ -3,7 +3,7 @@ import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import TopBar from './TopBar';
-import Card from './Card';
+import Contents from './Card';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -46,15 +46,16 @@ export default function SpacingGrid() {
         <Grid container justify="center" spacing={3}>
             <Grid item>
                 <Paper className={classes.paper} elevation={3}>
-                    <div>
-                        {/*<TopBar />*/}
-                        <textarea className={classes.contents}/>
-                    </div>
+                    <Contents isOriginal={true} />
+                    {/*<div>*/}
+                    {/*    <TopBar />*/}
+                    {/*    <textarea className={classes.contents}/>*/}
+                    {/*</div>*/}
                 </Paper>
             </Grid>
             <Grid item>
                 <Paper className={classes.paper} elevation={3}>
-                    <Card />
+                    <Contents isOriginal={false} />
                 </Paper>
             </Grid>
         </Grid>
