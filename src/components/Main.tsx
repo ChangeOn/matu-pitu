@@ -26,6 +26,43 @@ function Main() {
         let daumResults = hanspell.spellCheckByDAUM(sentence ? sentence : "", 10000, 'return', end, error);
         let pnuResults = hanspell.spellCheckByPNU(sentence, 10000, 'return', end, error);
         console.log("daum", daumResults, "pnu", pnuResults);
+
+
+        let query = "exe file path + cmd options (separated by | )";
+        // if (Utils.isWindows()) {
+        //     query = ffprobeWinPath + ffprobeOption + path;
+        // } else {
+        //     query = ffprobeMacPath + ffprobeOption + path;
+        // }
+        let audioInfo = getExecString(query);
+    }
+
+    const getExecString = (query: string) => {
+    /*    public String getExecString(String query) throws Exception {
+                String[] cmd = org.apache.commons.lang.StringUtils.split(query , "|");
+                Process oProcess;
+                String inputLine;
+                StringBuilder successBuilder = new StringBuilder();
+                StringBuilder errorBuilder = new StringBuilder();
+                try {
+                    oProcess = new ProcessBuilder(cmd).start();
+                    BufferedReader stdOut = new BufferedReader(new InputStreamReader(oProcess.getInputStream(), "UTF-8"));
+                    BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(), "UTF-8"));
+                    while ((inputLine = stdOut.readLine()) != null) {
+                        successBuilder.append(inputLine);
+                        successBuilder.append("\n");
+                    }
+                    while ((inputLine = stdError.readLine()) != null) {
+                        errorBuilder.append(org.apache.commons.lang.StringUtils.trim(inputLine));
+                        errorBuilder.append("\n");
+                    }
+                } catch (Exception e) {
+                    throw new Exception(e.getMessage());
+                }
+    //		String errorMsg = errorBuilder.toString();
+                return successBuilder.toString();
+            }*/
+        return null;
     }
 
     return (
